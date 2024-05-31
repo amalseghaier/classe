@@ -16,6 +16,10 @@ const Classe = sequelize.define('Classe', {
     allowNull: false,
     unique: true,
   },
+  niveau: {
+    type: DataTypes.STRING, // Adjust the data type as per your needs (e.g., STRING, INTEGER, etc.)
+    allowNull: false,
+  },
   departementId: {
     type: DataTypes.INTEGER,
     allowNull: false,

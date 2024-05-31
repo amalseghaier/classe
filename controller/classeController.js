@@ -68,7 +68,6 @@ class ClasseController {
       res.status(500).json({ error: 'Erreur lors de la mise à jour de la classe.' });
     }
   }
-
   async deleteClasse(req, res) {
     const { id } = req.params;
     try {
@@ -79,9 +78,11 @@ class ClasseController {
       await classe.destroy();
       res.status(204).end();
     } catch (error) {
+      console.error('Une erreur s\'est produite lors de la suppression : ', error);
       res.status(500).json({ error: 'Erreur lors de la suppression de la classe.' });
     }
   }
+  
   async getClasseNameById(req, res) {
     const { id } = req.params;
     try {
